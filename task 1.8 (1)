@@ -1,21 +1,18 @@
 import java.util.Scanner;
 
-import static java.lang.Integer.parseInt;
-
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String plug = scanner.nextLine();
-        String[] array = scanner.nextLine().split(" ");
-        int[] realArray = new int[array.length];
+        int plug = scanner.nextInt();
+        int[] array = new int[plug];
         for (int i = 0; i < array.length; i++) {
-            realArray[i] = Integer.parseInt(array[i]);
+            array[i] = scanner.nextInt();
         }
         int numbToFind = scanner.nextInt();
         int finds = 0;
         for (int i = 0; i < array.length; i++) {
-            if (realArray[i] == numbToFind) finds++;
+            if (array[i] == numbToFind) finds++;
         }
         if (finds == 0) System.out.print("NO");
         else System.out.print(finds);
