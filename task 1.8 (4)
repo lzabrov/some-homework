@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int num = scanner.nextInt();
+        int[] seq = new int[num];
+        for (int i = 1, u = 4; i < seq.length; i++, u = u + 3) {
+            seq[i] = u;
+            System.out.print(seq[i] + " ");
+        }
+
+    }
+}
