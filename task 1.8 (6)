@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int counter = 0;
+        int temp = 0;
+        int mfreq = 0;
+        int array[] = new int[n];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
+        for (int i = array.length-1; i >= 0; i--) {
+            temp = 0;
+            for (int j = 0; j < array.length; j++) {
+                if(array[j] == array[i]) temp++;
+            }
+            if(temp >= counter) { counter = temp; mfreq = array[i]; }
+        }
+        System.out.println(mfreq);
+    }
+
+}
