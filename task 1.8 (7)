@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt();
+        int array[] = new int[size];
+        int poz = 0, neg = 0;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+            if (array[i] >= 0) poz++;
+            else neg++;
+        }
+        int negative[] = new int[neg], pozitive[] = new int[poz];
+        neg = 0; poz = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] >= 0) { pozitive[poz] = array[i]; poz++; }
+            else { negative[neg] = array[i]; neg++; };
+        }
+        for (int i = 0; i < negative.length; i++) {
+            array[i] = negative[i];
+            System.out.print(array[i] + " ");
+        }
+        for (int i = 0; i < pozitive.length; i++) {
+            array[i] = pozitive[i];
+            System.out.print(array[i] + " ");
+        }
+
+
+    }
+
+}
